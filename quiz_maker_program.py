@@ -4,6 +4,13 @@
 #to a text file. Ask another question until 
 #the user chose to exit.
 
+def get_question():
+    while True:
+        question = input("Enter your question: ").strip()
+        if question:
+            return question
+        print("Question cannot be empty!")
+        
 def get_answers():
     """Gets four possible answers from the user."""
     answers = []
