@@ -54,15 +54,17 @@ def main():
             "correct": get_correct_answer()
         }
         
-        save_to_file(data["answers"], data["question"])
+        save_to_file(data["question"], data["answers"], data["correct"])
+        
         print("Question saved successfully!")
-
+        
         cont = input("\nWould you like to add another question? (yes/no): ").lower()
         if cont != 'yes':
             break
         
-        print("\nThank you for using Quiz Creator!")
-        print("\n I hoped you liked it! :D")
+    print("\nThank you for using Quiz Creator!")
     
+    print("\n I hoped you liked it! :D")
+
 if __name__ == "__main__":
     main()
