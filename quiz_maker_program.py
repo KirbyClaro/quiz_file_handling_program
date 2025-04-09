@@ -20,13 +20,31 @@ def get_correct_answer():
             return correct
         print("Invalid input! Please enter A, B, C, or D.")
 
+def save_to_file(question, answers, correct_answer):
+    """Saves the question and answers to a file."""
+    with open("quiz_questions.txt", "a") as file:
+        file.write(f"QUESTION:{question}\n")
+        file.write(f"A:{answers[0]}\n")
+        file.write(f"B:{answers[1]}\n")
+        file.write(f"C:{answers[2]}\n")
+        file.write(f"D:{answers[3]}\n")
+        file.write(f"CORRECT:{correct_answer}\n")
+        file.write("---\n")
+
 def main():
     print("Welcome to Quiz Creator!")
     print("Press Control + C to quit.")
     
-    question = input("Enter your question: ").strip()
-    answers = get_answers()
-    correct_answer = get_correct_answer()
+    while True:
+        question = input("\nEnter your question: ").strip()
+        if question.lower() == 'quit':
+            break
+        
+        answers = get_answers()
+        correct_answer = get_correct_answer()
+        
+        save_to_file(question, answers, correct_answer)
+        print("Question saved successfully!")
     
 if __name__ == "__main__":
     main()
