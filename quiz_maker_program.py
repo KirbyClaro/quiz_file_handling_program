@@ -24,6 +24,14 @@ def get_answers():
             print(f"Answer {label} cannot be empty!")
     return answers
 
+def get_correct_answer():
+    """Gets the correct answer from the user."""
+    while True:
+        correct = input("Enter the correct answer (A/B/C/D): ").upper().strip()
+        if correct in ['A', 'B', 'C', 'D']:
+            return correct
+        print("Invalid input! Please enter A, B, C, or D.")
+
 def save_to_file(question, answers, correct_answer):
     """Saves the question and answers to a file."""
     with open("quiz_questions.txt", "a") as file:
@@ -43,7 +51,7 @@ def main():
         data = {
             "question": get_question(),
             "answers": get_answers(),
-            "coorect":
+            "correct": get_correct_answer()
         }
         
         save_to_file(data["answers"], data["question"])
