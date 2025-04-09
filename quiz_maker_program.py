@@ -4,6 +4,17 @@
 #to a text file. Ask another question until 
 #the user chose to exit.
 
+def get_filename():
+    """Gets the filename from the user with validation."""
+    while True:
+        filename = input("Enter the filename to save questions (default: quiz_questions.txt): ").strip()
+        if filename:
+            if not filename.endswith('.txt'):
+                filename += '.txt'
+            return filename
+        print("Filename cannot be empty!")
+        return 'quiz_questions.txt'
+
 def get_question():
     """Gets a question from the user with validation."""
     while True:
@@ -11,7 +22,7 @@ def get_question():
         if question:
             return question
         print("Question cannot be empty!")
-        
+
 def get_answers():
     """Gets four possible answers from the user."""
     answers = []
@@ -32,9 +43,9 @@ def get_correct_answer():
             return correct
         print("Invalid input! Please enter A, B, C, or D.")
 
-def save_to_file(question, answers, correct_answer):
+def save_to_file(filename, question, answers, correct_answer):
     """Saves the question and answers to a file."""
-    with open("quiz_questions.txt", "a") as file:
+    with open(filename, "a") as file:
         file.write(f"QUESTION:{question}\n")
         file.write(f"A:{answers[0]}\n")
         file.write(f"B:{answers[1]}\n")
@@ -47,15 +58,17 @@ def main():
     print("~~~~~~~~Welcome to Quiz Creator!~~~~~~~~")
     print("Press Control + C to quit.")
     
+    # Get filename
+    filename = get_filename()
+    print(f"Questions will be saved to: {filename}")
+    
     while True:
         data = {
             "question": get_question(),
             "answers": get_answers(),
             "correct": get_correct_answer()
         }
-        
-        save_to_file(data["question"], data["answers"], data["correct"])
-        
+        save_to_file(filename, data["question"], data["answers"], data["correct"])
         print("Question saved successfully!")
         
         cont = input("\nWould you like to add another question? (yes/no): ").lower()
