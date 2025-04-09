@@ -1,0 +1,35 @@
+QUESTION:What is the capital city of Australia?
+A:Sydney
+B:Melbourne
+C:Canberra
+D:Brisbane
+CORRECT:C
+---
+QUESTION:Which country has Ottawa as its capital?
+A:United States
+B:Canada
+C:Germany
+D:Philippines
+CORRECT:B
+---
+QUESTION:What is the capital of Japan?
+A:Kyoto
+B:Osaka
+C:Tokyo
+D:Hiroshima
+CORRECT:C
+---
+QUESTION:Which capital city belongs to Egypt?
+A:Alexandria
+B:Cairo
+C:Luxor
+D:Giza
+CORRECT:B
+---
+QUESTION:What is the capital of Brazil?
+A:Rio de Janeiro
+B:São Paulo
+C:Brasília
+D:Salvador
+CORRECT:C
+---
