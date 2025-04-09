@@ -1,0 +1,35 @@
+QUESTION:Which part of the computer is considered the brain?
+A:Hard Drive
+B:CPU
+C:Monitor
+D:Keyboard
+CORRECT:B
+---
+QUESTION:What device is used to input letters and numbers?
+A:Mouse
+B:Printer
+C:Monitor
+D:Keyboard
+CORRECT:C
+---
+QUESTION:Which one of these is an output device?
+A:Scanner
+B:Microphone
+C:Monitor
+D:Mouse
+CORRECT:C
+---
+QUESTION:What is the function of RAM in a computer?
+A:Stores permanent files
+B:Helps run programs temporarily
+C:Connects to the internet
+D:Powers the computer
+CORRECT:B
+---
+QUESTION:Which component stores all your files and data permanently?
+A:CPU
+B:RAM
+C:Hard Drive
+D:Power Supply
+CORRECT:C
+---
