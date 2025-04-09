@@ -40,15 +40,21 @@ def main():
     print("Press Control + C to quit.")
     
     while True:
-        question = input("\nEnter your question: ").strip()
-        if question.lower() == 'quit':
+        data = {
+            "question": get_question(),
+            "answers": get_answers(),
+            "coorect":
+        }
+        
+        save_to_file(data["answers"], data["question"])
+        print("Question saved successfully!")
+
+        cont = input("\nWould you like to add another question? (yes/no): ").lower()
+        if cont != 'yes':
             break
         
-        answers = get_answers()
-        correct_answer = get_correct_answer()
-        
-        save_to_file(question, answers, correct_answer)
-        print("Question saved successfully!")
+        print("\nThank you for using Quiz Creator!")
+        print("\n I hoped you liked it! :D")
     
 if __name__ == "__main__":
     main()
