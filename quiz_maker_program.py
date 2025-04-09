@@ -5,6 +5,7 @@
 #the user chose to exit.
 
 def get_question():
+    """Gets a question from the user with validation."""
     while True:
         question = input("Enter your question: ").strip()
         if question:
