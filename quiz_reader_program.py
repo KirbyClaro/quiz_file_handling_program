@@ -3,9 +3,10 @@
 #question and check if the answer is correct.
 
 #ask user for file name
+import random
 def get_filename():
     while True:
-        filename = input("Enter the filename to load question").strip()
+        filename = input("Enter the filename to load question:").strip()
         if filename:
             if not filename.endswith(".txt"):
                 filename  += ".txt"
@@ -62,12 +63,29 @@ def get_user_answer():
         print("Invalid input. Please enter A, B, C, or D.")
 
 def check_answer(user_answer, correct_answer):
-    """Checks if the user's answer is correct."""
     return user_answer == correct_answer
 
 #run quiz and score
-#main function with replay option
+def run_quiz(questions):
+    score = 0
+    total = 0
+    random.shuffle(questions)
+    
+    for question in questions:
+        display_question(question)
+        user_answer = get_user_answer()
+        if check_answer(user_answer, question["correct"]):
+            print("✅ Correct!\n")
+            score += 1
+        else:
+            print(f"❌ Incorrect. The correct answer was {question['correct']}.\n")
+        total += 1
 
+    print("="*50)
+    print(f"🎯 You got {score} out of {total} correct.")
+    print("="*50)
+    
+#main function with replay option
 def main():
     filename = get_filename()
     questions = load_questions(filename)
