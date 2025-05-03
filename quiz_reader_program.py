@@ -41,15 +41,17 @@ def load_questions(filename):
     except FileNotFoundError:
         print(f"❌ File '{filename}' not found.")
     return questions
-    
-    
-    
-    
-    
-    
-    
-    
+
 #display the questions
+def display_question(question_data):
+    print("\n" + "="*50)
+    print(f"Question:")
+    print(question_data["question"])
+    print(f"A. {question_data['A']}")
+    print(f"B. {question_data['B']}")
+    print(f"C. {question_data['C']}")
+    print(f"D. {question_data['D']}")
+    print("="*50)
 #accept and check user answer
 #run quiz and score
 #main function with replay option
