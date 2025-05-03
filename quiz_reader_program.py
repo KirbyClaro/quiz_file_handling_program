@@ -13,6 +13,21 @@ def get_filename():
         print("Filename cannot be empty!")
         return
 #access the file and read it
+def load_questions(filename):
+    questions = []
+    try:
+        with open(filename, "r") as file:
+    except FileNotFoundError:
+        print(f"❌ File '{filename}' not found.")
+    return questions
+    
+    
+    
+    
+    
+    
+    
+    
 #display the questions
 #accept and check user answer
 #run quiz and score
