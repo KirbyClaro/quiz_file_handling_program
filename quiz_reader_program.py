@@ -52,6 +52,25 @@ def display_question(question_data):
     print(f"C. {question_data['C']}")
     print(f"D. {question_data['D']}")
     print("="*50)
+    
 #accept and check user answer
+def get_user_answer():
+    while True:
+        answer = input("Your answer (A/B/C/D): ").upper().strip()
+        if answer in ['A', 'B', 'C', 'D']:
+            return answer
+        print("Invalid input. Please enter A, B, C, or D.")
+
+def check_answer(user_answer, correct_answer):
+    """Checks if the user's answer is correct."""
+    return user_answer == correct_answer
+
 #run quiz and score
 #main function with replay option
+
+def main():
+    filename = get_filename()
+    questions = load_questions(filename)
+    
+if __name__ == "__main__":
+    main()
