@@ -90,5 +90,16 @@ def main():
     filename = get_filename()
     questions = load_questions(filename)
     
+    if not questions:
+        print("No questions found in the file.")
+        return
+
+    while True:
+        run_quiz(questions)
+        again = input("Do you want to play again? (yes/no): ").strip().lower()
+        if again != "yes":
+            print("Thanks for playing!")
+            break
+        
 if __name__ == "__main__":
     main()
