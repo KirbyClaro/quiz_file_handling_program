@@ -2,8 +2,10 @@
 #The user will answer the randomly selected 
 #question and check if the answer is correct.
 
-#ask user for file name
+
 import random
+
+#ask user for file name
 def get_filename():
     while True:
         filename = input("Enter the filename to load question:").strip()
